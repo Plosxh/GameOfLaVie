@@ -12,10 +12,13 @@ class Grille:
         self._grille = {}
         self._largeur = y
         self._longueur = x
+        random.seed(9876543210)
         for i in range(x):
             rows = {}
             for j in range(y):
-                random.seed(0)
+
+                #toto = random.getstate()
+                #print(toto)
                 rows[j]=random.choice([CONST_TERRE,CONST_EAU,CONST_MONTAGNE])
             self._grille[i]=rows
 
@@ -47,17 +50,19 @@ class Grille:
         except KeyError:
             return "Error Out Of Bound"
 
+    def get_grille(self):
+        return self._grille
     def get_largeur(self):
         return self._largeur
 
     def get_longueur(self):
         return self._longueur
 
-grille = Grille (10,10)
-mort,zombie,vivant = grille.check_voisins(5,5)
-print("mort")
-print(mort)
-print("vivant")
-print(vivant)
-print("zombie")
-print(zombie)
+#grille = Grille (10,10)
+#mort,zombie,vivant = grille.check_voisins(5,5)
+#print("mort")
+#print(mort)
+#print("vivant")
+#print(vivant)
+#print("zombie")
+#print(zombie)
