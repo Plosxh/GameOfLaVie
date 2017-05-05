@@ -10,17 +10,17 @@ class TestJeu(unittest.TestCase):
 
         return True
 
-    def test_main(self):
+     def test_main(self):
         self.assertEqual(True,self.modulo())
 
-   def test_grilleGeneration(self):
+     def test_grilleGeneration(self):
 
         #self.assertEqual(True,self.modulo())
         grille = Grille(10,10)
         self.assertEqual("Error Out Of Bound",grille.get_Case(40,1))
         self.assertEqual(4,grille.get_Case(1,1))
 
-    def test_grilleInitialisation(self):
+     def test_grilleInitialisation(self):
         grille = Grille(10,10)
 
         for i in range(grille.get_longueur()):
