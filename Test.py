@@ -11,7 +11,7 @@ class TestJeu(unittest.TestCase):
         return True
 
     def test_main(self):
-        self.assertEqual(true,self.modulo())
+        self.assertEqual(True,self.modulo())
     
   #  def test_grilleGeneration(self):
 
