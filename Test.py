@@ -12,18 +12,18 @@ class TestJeu(unittest.TestCase):
 
     def test_main(self):
         self.assertEqual(True,self.modulo())
-    
-  #  def test_grilleGeneration(self):
 
- #       #self.assertEqual(True,self.modulo())
- #       grille = Grille(10,10)
- #       self.assertEqual("Error Out Of Bound",grille.get_Case(40,1))
- #       self.assertEqual(4,grille.get_Case(1,1))
+   def test_grilleGeneration(self):
 
-#    def test_grilleInitialisation(self):
-#        grille = Grille(10,10)
+        #self.assertEqual(True,self.modulo())
+        grille = Grille(10,10)
+        self.assertEqual("Error Out Of Bound",grille.get_Case(40,1))
+        self.assertEqual(4,grille.get_Case(1,1))
 
-  #      for i in range(grille.get_longueur()):
-  #          for j in range(grille.get_largeur()):
-  #              self.assertEqual(1,grille.get_Case(i,j)%3)
+    def test_grilleInitialisation(self):
+        grille = Grille(10,10)
+
+        for i in range(grille.get_longueur()):
+           for j in range(grille.get_largeur()):
+               self.assertEqual(1,grille.get_Case(i,j)%3)
 unittest.main()
