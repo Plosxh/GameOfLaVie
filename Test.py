@@ -5,17 +5,15 @@ class TestJeu(unittest.TestCase):
 
     def modulo(self):
         for i in range(9):
-            print(i)
-            print(i%3)
-
+            pass
         return True
 
-    #def test_main(self):
-    #    self.assertEqual(True,self.modulo())
+    def test_main(self):
+        self.assertEqual(True,self.modulo())
 
     def test_grilleGeneration(self):
 
-    #self.assertEqual(True,self.modulo())
+        self.assertEqual(True,self.modulo())
         grille = Grille(10,10)
         self.assertEqual("Error Out Of Bound",grille.get_Case(40,1))
         self.assertEqual(7,grille.get_Case(1,1))

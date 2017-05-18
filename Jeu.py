@@ -1,8 +1,8 @@
 from tkinter import *
 from Grille import *
-CONST_REC_TAILLE = 10
-CONST_LONGUEUR = 1000
-CONST_LARGEUR = 1000
+CONST_REC_TAILLE = 5
+CONST_LONGUEUR = 500
+CONST_LARGEUR = 500
 fenetre = Tk()
 fenetre.wm_title("GameOfLaVie")
 
