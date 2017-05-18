@@ -34,7 +34,7 @@ def check_voisin(coords):
         print(rdm)
         if rdm > 999:
             canvas.itemconfig(rec[i], fill="yellow")
-'''
+
 i = 0
 for x in range(int(CONST_LARGEUR/CONST_REC_TAILLE)):
     for y in range(int(CONST_LONGUEUR/CONST_REC_TAILLE)):
@@ -64,7 +64,7 @@ for x in range(int(CONST_LARGEUR/CONST_REC_TAILLE)):
         rec = canvas.create_rectangle(x*CONST_REC_TAILLE,y*CONST_REC_TAILLE,(x+1)*CONST_REC_TAILLE,(y+1)*CONST_REC_TAILLE,fill=color,outline="black",tags=rect_tags)
         monrec = canvas.find_withtag(rect_tags[0])
         data={"tag": rect_tags}
-        canvas.tag_bind(rect_tags,"<Button-1>",lambda event, arg=data: clicked(event, arg))'''
+        canvas.tag_bind(rect_tags,"<Button-1>",lambda event, arg=data: clicked(event, arg))
 
 canvas.pack()
 
