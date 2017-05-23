@@ -12,7 +12,7 @@ class Grille:
         self._grille = {}
         self._largeur = y
         self._longueur = x
-        random.seed(9876543210)
+        random.seed(9876543210) #Seed fixed for test purpose
         for i in range(x):
             rows = {}
             for j in range(y):

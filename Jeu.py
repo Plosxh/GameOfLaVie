@@ -20,13 +20,22 @@ def clicked(event, arg):
     #rec = canvas.find_withtag(arg["tag"])
     check_voisin(item,coords)
     rec = canvas.gettags(arg["tag"])
-    print(len(rec))
+    #print(len(rec))
+    update_cell();
     for value in range(len(rec)):
         if rec[value] == "zombie":
             #print("RUN !")
             check_voisin(item,coords)
 
     return coords
+
+def update_cell():
+    cells = canvas.find_withtag("all");
+    for cell in cells:
+        cell_coords = canvas.coords(cell);
+        #check_voisin(cell,cell_coords);
+        #print(cell_coords);
+    print("END UPDATE")
 
 def check_voisin(item,coords):
     print(item[0])
@@ -40,7 +49,7 @@ def check_voisin(item,coords):
         item_tags = canvas.gettags(r)
         for tag in item_tags:
             if tag == "vivant":
-                print(str(r)+" IS ALIVE !")    
+                print(str(r)+" IS ALIVE !")
     #Rec contient les case adjacentes à la case donnée en param
     #for i in range(len(rec)):
         #print(rec[i])
