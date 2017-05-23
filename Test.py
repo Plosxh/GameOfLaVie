@@ -32,4 +32,72 @@ class TestJeu(unittest.TestCase):
         item ={5241,5140,5240,5340,5341,5342,5242,5142,5141}
 
 
+    def test_vivant(self):
+        grille = Grille(3,3)
+        rows = [[1,1,2],[2,1,1],[1,1,1]]
+        for i in range(3):
+           for j in range(3):
+               grille.set_grille(i,j,rows[i][j])
+        #Lancer un tour de traitement
+        #vérifier que la ligne 2,2 est égal à 1
+        self.assertEqual(True,self.modulo())
+
+        grille = Grille(3,3)
+        rows = [[1,2,1],[2,1,1],[1,2,2]]
+        for i in range(3):
+           for j in range(3):
+               grille.set_grille(i,j,rows[i][j])
+        #Lancer un tour de traitement
+        #vérifier que la ligne 2,2 est égal à 1
+        self.assertEqual(True,self.modulo())
+
+        grille = Grille(3,3)
+        rows = [[1,2,1],[1,2,1],[2,1,1]]
+        for i in range(3):
+           for j in range(3):
+               grille.set_grille(i,j,rows[i][j])
+        #Lancer un tour de traitement
+        #vérifier que la ligne 2,2 est égal à 2
+        self.assertEqual(True,self.modulo())
+
+        grille = Grille(3,3)
+        rows = [[2,2,2],[1,2,1],[1,2,1]]
+        for i in range(3):
+           for j in range(3):
+               grille.set_grille(i,j,rows[i][j])
+        #Lancer un tour de traitement
+        #vérifier que la ligne 2,2 est égal à 2
+        self.assertEqual(True,self.modulo())
+
+    def test_mort(self):
+        #cas de figure 1
+        grille = Grille(3,3)
+        rows = [[1,1,1],[1,2,1],[1,1,1]]
+        for i in range(3):
+           for j in range(3):
+               grille.set_grille(i,j,rows[i][j])
+        #Lancer un tour de traitement
+        #vérifier que la ligne 2,2 est égal à 1
+        self.assertEqual(True,self.modulo())
+
+        #cas de figure 2
+        grille = Grille(3,3)
+        rows = [[2,2,2],[1,2,1],[2,2,1]]
+        for i in range(3):
+           for j in range(3):
+               grille.set_grille(i,j,rows[i][j])
+        #Lancer un tour de traitement
+        #vérifier que la ligne 2,2 est égal à 1
+        self.assertEqual(True,self.modulo())
+
+    def test_naissance(self):
+        grille = Grille(3,3)
+        rows = [[2,2,1],[1,1,2],[1,1,1]]
+        for i in range(3):
+           for j in range(3):
+               grille.set_grille(i,j,rows[i][j])
+        #Lancer un tour de traitement
+        #vérifier que la ligne 2,2 est égal à 2
+        self.assertEqual(True,self.modulo())
+
 unittest.main()

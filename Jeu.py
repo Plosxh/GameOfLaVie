@@ -6,18 +6,6 @@ CONST_REC_TAILLE = 50
 CONST_LONGUEUR = 500
 CONST_LARGEUR = 500
 
-def main():
-    fenetre = Tk()
-    fenetre.wm_title("GameOfLaVie")
-    grille = Grille(int(CONST_LARGEUR/CONST_REC_TAILLE),int(CONST_LONGUEUR/CONST_REC_TAILLE))
-    vue = Vue(CONST_LONGUEUR,CONST_LARGEUR,CONST_REC_TAILLE,fenetre,grille);
-    mainmenu = Menu(fenetre)  ## Barre de menu
-    menuExample = Menu(mainmenu)  ## Menu fils menuExample
-    menuExample.add_command(label="Start", command=Start)  ## Ajout d'une option au menu fils menuFile
-    menuExample.add_command(label="Quitter", command=fenetre.quit)
-    mainmenu.add_cascade(label = "Jeu", menu=menuExample)
-    fenetre.config(menu = mainmenu)
-    fenetre.mainloop()
 
 #label = Label(fenetre, text="Hello World")
 #label.pack()
@@ -80,3 +68,16 @@ def turnToZombie():
 def Start():
     print("start")
     update_cells();
+
+if __name__ == "__main__":
+    fenetre = Tk()
+    fenetre.wm_title("GameOfLaVie")
+    grille = Grille(int(CONST_LARGEUR/CONST_REC_TAILLE),int(CONST_LONGUEUR/CONST_REC_TAILLE))
+    vue = Vue(CONST_LONGUEUR,CONST_LARGEUR,CONST_REC_TAILLE,fenetre,grille);
+    mainmenu = Menu(fenetre)  ## Barre de menu
+    menuExample = Menu(mainmenu)  ## Menu fils menuExample
+    menuExample.add_command(label="Start", command=Start)  ## Ajout d'une option au menu fils menuFile
+    menuExample.add_command(label="Quitter", command=fenetre.quit)
+    mainmenu.add_cascade(label = "Jeu", menu=menuExample)
+    fenetre.config(menu = mainmenu)
+    fenetre.mainloop()

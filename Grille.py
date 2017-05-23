@@ -52,6 +52,8 @@ class Grille:
 
     def get_grille(self):
         return self._grille
+    def set_grille(self,x,y,value):
+        self._grille[x][y] = value
     def get_largeur(self):
         return self._largeur
 
