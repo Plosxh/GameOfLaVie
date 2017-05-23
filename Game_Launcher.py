@@ -1,0 +1,4 @@
+from Jeu import *
+
+
+main()

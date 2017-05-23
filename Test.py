@@ -1,5 +1,7 @@
 import unittest
 from Grille import *
+from Jeu import *
+from Vue import *
 
 class TestJeu(unittest.TestCase):
 
@@ -24,4 +26,10 @@ class TestJeu(unittest.TestCase):
         for i in range(grille.get_longueur()):
            for j in range(grille.get_largeur()):
                self.assertEqual(1,grille.get_Case(i,j)%3)
+
+    def test_check_voisin(self):
+        grille = Grille(10,10);
+        item ={5241,5140,5240,5340,5341,5342,5242,5142,5141}
+
+
 unittest.main()
