@@ -6,7 +6,6 @@ install:
 - pip install codecov
 # command to run tests
 script:
-- export DISPLAY=:0.0
 - coverage run Test.py
 
 after_success:
