@@ -71,11 +71,23 @@ class TestJeu(unittest.TestCase):
 
     def test_mort(self):
         #cas de figure 1
+        fenetre = Tk()
+        fenetre.wm_title("GameOfLaVie")
         grille = Grille(3,3)
-        rows = [[1,1,1],[1,2,1],[1,1,1]]
+        rows = [[2,2,2],[2,2,2],[2,2,1]]
         for i in range(3):
            for j in range(3):
                grille.set_case(i,j,rows[i][j])
+        vue = Vue(CONST_LONGUEUR,CONST_LARGEUR,CONST_REC_TAILLE,fenetre,grille);
+        mainmenu = Menu(fenetre)  ## Barre de menu
+        menuExample = Menu(mainmenu)  ## Menu fils menuExample
+        menuExample.add_command(label="Start", command=lambda :Start(vue))  ## Ajout d'une option au menu fils menuFile
+        menuExample.add_command(label="Quitter", command=fenetre.quit)
+        mainmenu.add_cascade(label = "Jeu", menu=menuExample)
+        fenetre.config(menu = mainmenu)
+        update_cells(vue,grille)
+        status = grille.get_Case(1,1)
+        self.assertEqual(1,status)
         #Lancer un tour de traitement
         #vérifier que la ligne 2,2 est égal à 1
         self.assertEqual(True,self.modulo())

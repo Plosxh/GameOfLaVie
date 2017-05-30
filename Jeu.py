@@ -6,31 +6,6 @@ CONST_REC_TAILLE = 50
 CONST_LONGUEUR = 500
 CONST_LARGEUR = 500
 
-
-#label = Label(fenetre, text="Hello World")
-#label.pack()
-#grille = Grille(int(CONST_LARGEUR/CONST_REC_TAILLE),int(CONST_LONGUEUR/CONST_REC_TAILLE))
-#canvas = Canvas(fenetre, width=CONST_LONGUEUR, height=CONST_LARGEUR, background='white')
-
-def clicked(event, arg):
-    coords = canvas.coords(arg["tag"])
-    item = canvas.find_withtag(arg["tag"])
-    #print(arg["tag"])
-    canvas.addtag_withtag("vivant", arg["tag"])
-    canvas.itemconfig(arg["tag"], fill="yellow")
-    #print(arg["tag"])
-    #rec = canvas.find_withtag(arg["tag"])
-    check_voisin(item,coords)
-    rec = canvas.gettags(arg["tag"])
-    #print(len(rec))
-    update_cells();
-    for value in range(len(rec)):
-        if rec[value] == "zombie":
-            #print("RUN !")
-            check_voisin(item,coords)
-
-    return coords
-
 def update_cells(vue,grille):
     la_grille = grille.get_grille()
     update_grille = grille
