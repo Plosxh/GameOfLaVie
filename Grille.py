@@ -20,6 +20,7 @@ class Grille:
                 #toto = random.getstate()
                 #print(toto)
                 rows[j]=random.choice([CONST_TERRE,CONST_EAU,CONST_MONTAGNE])
+            #print(rows)
             self._grille[i]=rows
 
     def check_voisins(self,x,y):
@@ -52,19 +53,10 @@ class Grille:
 
     def get_grille(self):
         return self._grille
-    def set_grille(self,x,y,value):
+    def set_case(self,x,y,value):
         self._grille[x][y] = value
     def get_largeur(self):
         return self._largeur
 
     def get_longueur(self):
         return self._longueur
-
-#grille = Grille (10,10)
-#mort,zombie,vivant = grille.check_voisins(5,5)
-#print("mort")
-#print(mort)
-#print("vivant")
-#print(vivant)
-#print("zombie")
-#print(zombie)
